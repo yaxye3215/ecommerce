@@ -9,10 +9,10 @@ const app = express()
 app.use(express.json())
 app.use('/api/user', userRouter)
 
-const port = 5000
+
 
 app.listen(()=>{
-console.log(`server is running ${port}`)
+console.log(`server is running ${process.env.PORT}`)
 })
 
 
