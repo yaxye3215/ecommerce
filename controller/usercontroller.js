@@ -1,4 +1,5 @@
 import Users from "../models/usermodel.js";
+import generaltoen from "../utils/generaltoken.js";
 
 
 export const register = async(req, res)=>{
@@ -21,6 +22,8 @@ export const register = async(req, res)=>{
             password:user.password,
             phone:user.phone,
             address:user.address,
+            token:generaltoen(user._id),
+            
          
         })
         
@@ -44,6 +47,7 @@ export const login = async(req, res)=>{
             password:user.password,
             phone:user.phone,
             address:user.address,
+            token:generaltoen(user._id),
          
         })
         
