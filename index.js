@@ -9,9 +9,11 @@ const app = express()
 app.use(express.json())
 app.use('/api/user', userRouter)
 
+const port= process.env.PORT
 
 
-app.listen(()=>{
+
+app.listen(port,()=>{
 console.log(`server is running ${process.env.PORT}`)
 })
 
