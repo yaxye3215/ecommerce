@@ -11,7 +11,7 @@ export const register = async(req, res)=>{
         
     }
 
-    const user=  Users.create({
+    const user= await Users.create({
         name, email, password, address, phone,
     })
     if (user) {
