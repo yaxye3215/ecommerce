@@ -3,7 +3,7 @@ import generaltoen from "../utils/generaltoken.js";
 
 
 export const register = async(req, res)=>{
-    const {name, email, password, phone, address} = req.body;
+    const {name, email, password, phone, address} =  req.body;
 
     const userExists =await Users.findOne({email})
     if (userExists) {
@@ -35,7 +35,7 @@ export const register = async(req, res)=>{
 }
 
 export const login = async(req, res)=>{
-    const {email , password} = req.body;
+    const {email , password} =  req.body;
 
     const user = await Users.findOne({email})
     

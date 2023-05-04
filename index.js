@@ -7,7 +7,7 @@ dotenv.config()
 contectdb()
 const app = express()
 app.use(express.json())
-app.use('/api/user', userRouter)
+app.use('/api/users', userRouter)
 
 const port= process.env.PORT
 
