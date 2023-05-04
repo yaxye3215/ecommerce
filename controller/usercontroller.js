@@ -5,7 +5,7 @@ import generaltoen from "../utils/generaltoken.js";
 export const register = async(req, res)=>{
     const {name, email, password, phone, address} = req.body;
 
-    const userExists = Users.findOne({email})
+    const userExists =await Users.findOne({email})
     if (userExists) {
         res.status(400).json({message : "User already exists"})
         
@@ -37,7 +37,7 @@ export const register = async(req, res)=>{
 export const login = async(req, res)=>{
     const {email , password} = req.body;
 
-    const user = Users.findOne({email})
+    const user = await Users.findOne({email})
     
     if (email && password == user.password) {
         res.status(200).json({
