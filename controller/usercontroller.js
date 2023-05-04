@@ -9,7 +9,8 @@ export const register = async(req, res)=>{
     if (userExists) {
         res.status(400).json({message : "User already exists"})
         
-    }
+    }else{
+        
 
     const user= await Users.create({
         name, email, password, address, phone,
@@ -30,6 +31,7 @@ export const register = async(req, res)=>{
     } else {
         res.status(401).json({message : "Invalid User data"})
         
+    }
     }
 
 }
