@@ -61,7 +61,7 @@ export const login = async(req, res)=>{
 
  export const getuserprofile = async( res, req)=>{
 
-    const {token, _id} = req.body;
+    const {token, id} = req.body;
     const user = await Users.findById(id);
     if(user){
         res.status(200).json({
