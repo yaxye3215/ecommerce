@@ -49,6 +49,7 @@ export const login = async(req, res)=>{
             password:user.password,
             phone:user.phone,
             address:user.address,
+            isAdmin:user.isAdmin,
             token:generaltoen(user._id),
          
         })
@@ -71,6 +72,7 @@ export const login = async(req, res)=>{
             password:user.password,
             phone:user.phone,
             address:user.address,
+            isAdmin:user.isAdmin,
             token
          
         })
