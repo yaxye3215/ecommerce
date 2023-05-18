@@ -3,6 +3,7 @@ import generaltoen from "../utils/generaltoken.js";
 
 
 export const register = async(req, res)=>{
+  try {
     const {name, email, password, phone, address} =  req.body;
 
     const userExists =await Users.findOne({email})
@@ -33,6 +34,12 @@ export const register = async(req, res)=>{
         
     }
     }
+    
+  } catch (error) {
+    res.status(500).json({error: error.Message})
+
+    
+  }
 
 }
 
