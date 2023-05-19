@@ -68,7 +68,7 @@ export const deleteProduct = async(req, res)=>{
 
 export const getProducts = async (req, res)=>{
     try {
-        const products = await product()
+        const products = await product.find()
     res.json(products)
         
     } catch (error) {
